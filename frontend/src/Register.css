@@ -1,0 +1,182 @@
+/* Page background */
+.register-container {
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 90px 20px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background:
+            radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.13), transparent 32%),
+            radial-gradient(circle at 85% 85%, rgba(124, 58, 237, 0.12), transparent 32%),
+            linear-gradient(135deg, #f5f7ff, #f9f7ff);
+    font-family: "Inter", Arial, sans-serif;
+}
+
+.register-page-wrapper {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Registration card */
+.register-form {
+    width: 100%;
+    max-width: 470px;
+    box-sizing: border-box;
+    padding: 42px 40px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid #e8eaf5;
+    border-radius: 25px;
+    box-shadow: 0 22px 65px rgba(43, 48, 100, 0.12);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.register-form:hover {
+    box-shadow: 0 26px 75px rgba(43, 48, 100, 0.16);
+}
+
+/* Heading */
+.register-form h2 {
+    margin: 0 0 12px;
+    color: #172554;
+    text-align: center;
+    font-size: 28px;
+    line-height: 1.3;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+}
+
+.register-form > p {
+    margin: 0 0 32px;
+    color: #71809d;
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Labels */
+.register-form label {
+    display: block;
+    margin: 21px 0 9px;
+    color: #263653;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* Inputs */
+.register-form input {
+    width: 100%;
+    height: 52px;
+    box-sizing: border-box;
+    padding: 0 15px;
+    color: #172554;
+    background: #f8faff;
+    border: 1.5px solid #dce3f2;
+    border-radius: 12px;
+    outline: none;
+    font-family: inherit;
+    font-size: 15px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.register-form input::placeholder {
+    color: #9aa8c0;
+}
+
+.register-form input:hover {
+    border-color: #b8c5e2;
+}
+
+.register-form input:focus {
+    background: #fff;
+    border-color: #5945e8;
+    box-shadow: 0 0 0 4px rgba(89, 69, 232, 0.11);
+}
+
+/* Create account button */
+.register-form button[type="submit"] {
+    width: 100%;
+    min-height: 54px;
+    margin-top: 28px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(110deg, #5145e5, #7028db);
+    color: #fff;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 750;
+    cursor: pointer;
+    box-shadow: 0 10px 22px rgba(91, 57, 220, 0.19);
+    transition: transform 0.2s ease, box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.register-form button[type="submit"]:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(91, 57, 220, 0.28);
+}
+
+.register-form button[type="submit"]:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.register-form button[type="submit"]:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+/* Success and error messages */
+.register-form [role="status"] {
+    margin: 18px 0 0;
+    padding: 12px 14px;
+    border: 1px solid #c7f0d5;
+    border-radius: 10px;
+    background: #f0fdf4;
+    color: #166534;
+    text-align: center;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+/* Back to Login button
+   Applies to the button rendered before <Register /> in App.jsx */
+.register-container ~ button {
+    position: absolute;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .register-container {
+        padding: 35px 16px;
+        align-items: center;
+    }
+
+    .register-form {
+        max-width: 100%;
+        padding: 32px 23px;
+        border-radius: 20px;
+    }
+
+    .register-form h2 {
+        font-size: 24px;
+    }
+
+    .register-form > p {
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+
+    .register-form input {
+        height: 49px;
+        font-size: 14px;
+    }
+
+    .register-form button[type="submit"] {
+        min-height: 50px;
+    }
+}

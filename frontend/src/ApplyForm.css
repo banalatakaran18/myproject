@@ -1,0 +1,300 @@
+/* ===== FULL PAGE APPLICATION FORM ===== */
+
+.apply-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 30px 20px;
+    background: #f5f6fc;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Main Form Container */
+
+.apply-form-card {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 36px 42px;
+    box-sizing: border-box;
+    background: #ffffff;
+    border: 1px solid #e4e7f2;
+    border-radius: 18px;
+    box-shadow: 0 8px 35px rgba(35, 40, 90, 0.08);
+    animation: applyFormEnter 0.25s ease-out;
+}
+
+/* Entrance Animation */
+
+@keyframes applyFormEnter {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Close Button */
+
+.apply-close {
+    position: absolute;
+    top: 22px;
+    right: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #e3e5f0;
+    border-radius: 10px;
+    background: #f7f7fc;
+    color: #292d69;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.apply-close:hover {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* Form Heading */
+
+.apply-form-card h2 {
+    margin: 0 55px 10px 0;
+    color: #25294f;
+    font-size: 29px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.apply-form-card > p {
+    margin: 18px 0 28px;
+    padding: 16px 18px;
+    border-left: 4px solid #7771d9;
+    border-radius: 8px;
+    background: #f4f3ff;
+    color: #5f6480;
+    font-size: 14px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.apply-form-card > p strong {
+    color: #292d69;
+}
+
+/* Form Grid */
+
+.apply-form-card form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 24px;
+    row-gap: 10px;
+}
+
+/* Labels */
+
+.apply-form-card form label {
+    display: block;
+    align-self: end;
+    margin-top: 12px;
+    color: #303453;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* Inputs, Select and Textarea */
+
+.apply-form-card form input:not([type="file"]),
+.apply-form-card form select,
+.apply-form-card form textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    margin-top: 7px;
+    padding: 13px 14px;
+    border: 1px solid #dfe2ee;
+    border-radius: 9px;
+    outline: none;
+    background: #ffffff;
+    color: #292d50;
+    font-family: inherit;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.apply-form-card form input:not([type="file"]),
+.apply-form-card form select {
+    min-height: 47px;
+}
+
+.apply-form-card form textarea {
+    min-height: 105px;
+    resize: vertical;
+}
+
+.apply-form-card form input:focus,
+.apply-form-card form select:focus,
+.apply-form-card form textarea:focus {
+    border-color: #7771d9;
+    box-shadow: 0 0 0 3px rgba(119, 113, 217, 0.12);
+}
+
+.apply-form-card form input::placeholder,
+.apply-form-card form textarea::placeholder {
+    color: #9a9eb3;
+}
+
+/* Resume Upload */
+
+.apply-form-card form input[type="file"] {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    margin-top: 7px;
+    padding: 13px;
+    border: 1px dashed #a5a1e8;
+    border-radius: 9px;
+    background: #f8f7ff;
+    color: #555a78;
+    font-family: inherit;
+    font-size: 13px;
+}
+
+/* Selected File Message */
+
+.apply-form-card form > p {
+    grid-column: 1 / -1;
+    margin: 4px 0;
+    color: #15803d;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+/* Submit Button */
+
+.apply-form-card form button[type="submit"] {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-height: 50px;
+    margin-top: 22px;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #292d69, #5b45b5);
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 750;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(41, 45, 105, 0.15);
+    transition: 0.2s ease;
+}
+
+.apply-form-card form button[type="submit"]:hover:not(:disabled) {
+    background: linear-gradient(135deg, #383d83, #7058ce);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(41, 45, 105, 0.2);
+}
+
+.apply-form-card form button[type="submit"]:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+/* Tablet */
+
+@media (max-width: 700px) {
+    .apply-overlay {
+        padding: 20px 14px;
+    }
+
+    .apply-form-card {
+        padding: 30px 24px;
+    }
+
+    .apply-form-card h2 {
+        font-size: 25px;
+    }
+
+    .apply-form-card form {
+        column-gap: 16px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 520px) {
+    .apply-overlay {
+        padding: 12px;
+    }
+
+    .apply-form-card {
+        padding: 25px 18px;
+        border-radius: 13px;
+    }
+
+    .apply-form-card h2 {
+        font-size: 22px;
+    }
+
+    .apply-close {
+        top: 15px;
+        right: 14px;
+        width: 34px;
+        height: 34px;
+    }
+
+    .apply-form-card form {
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: 8px;
+    }
+
+    .apply-form-card form label {
+        margin-top: 10px;
+    }
+
+    .apply-form-card form button[type="submit"] {
+        margin-top: 16px;
+    }
+}
+/* Saved Profile Resume Preview */
+
+.profile-resume-preview {
+    width: 100%;
+    margin: 10px 0 18px;
+    padding: 16px 18px;
+    background: #f2f0ff;
+    border: 1px solid #ded8ff;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.profile-resume-preview p {
+    margin: 0;
+    color: #37325f;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.profile-resume-preview span {
+    display: block;
+    margin-top: 7px;
+    color: #168452;
+    font-size: 13px;
+}
